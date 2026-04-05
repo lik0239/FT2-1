@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Popular Collections</title>
+  <style>
+    :root {
+      --page-bg: #d8dae8;
+      --panel-bg: #fbfcff;
+      --card-bg: #ffffff;
+      --text-main: #0e0e38;
+      --text-soft: #81809a;
+      --shell-shadow: 0 28px 44px rgba(123, 129, 164, 0.22);
+      --card-shadow: 0 8px 14px rgba(84, 93, 136, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 28px;
+      background:
+        radial-gradient(circle at 28% 72%, rgba(255, 255, 255, 0.32) 0 12%, transparent 12.2%),
+        radial-gradient(circle at 72% 14%, rgba(255, 255, 255, 0.34) 0 9.5%, transparent 9.7%),
+        var(--page-bg);
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text-main);
+    }
+
+    .shell {
+      width: min(1010px, 100%);
+      min-height: 500px;
+      padding: 42px 40px 38px;
+      border-radius: 20px;
+      background: var(--panel-bg);
+      box-shadow: var(--shell-shadow);
+    }
+
+    .title {
+      margin-bottom: 18px;
+      font-size: 32px;
+      font-weight: 700;
+      line-height: 1;
+      font-family: Merriweather, Georgia, "Times New Roman", serif;
+      color: var(--text-main);
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 36px;
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      height: 44px;
+      padding: 10px;
+      border-radius: 8px;
+      background: #fff;
+      color: #474663;
+      font-size: 13px;
+      line-height: 24px;
+      box-shadow: 0 2px 6px rgba(111, 122, 170, 0.08);
+    }
+
+    .chip.profile {
+      width: 70px;
+    }
+
+    .chip.new-york {
+      width: 94px;
+    }
+
+    .chip.relaxing {
+      width: 89px;
+    }
+
+    .chip.person {
+      width: 75px;
+    }
+
+    .chip.fashion {
+      width: 83px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+    }
+
+    .collection-card {
+      border-radius: 24px;
+      background: var(--card-bg);
+      padding: 16px;
+      box-shadow: var(--card-shadow);
+    }
+
+    .hero {
+      width: 100%;
+      aspect-ratio: 250 / 193;
+      border-radius: 18px;
+      overflow: hidden;
+      background: #e9ebf6;
+    }
+
+    .hero img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .thumbs {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin: 14px 0 16px;
+    }
+
+    .thumb {
+      aspect-ratio: 70 / 65;
+      border-radius: 14px;
+      overflow: hidden;
+      background: #eceff8;
+    }
+
+    .thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .name {
+      font-size: 30px;
+      font-weight: 700;
+      line-height: 1.1;
+      font-family: Merriweather, Georgia, "Times New Roman", serif;
+      color: var(--text-main);
+    }
+
+    .count {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      color: #4e4d6c;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .count svg {
+      width: 18px;
+      height: 18px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    @media (max-width: 960px) {
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .shell {
+        padding: 28px 22px;
+      }
+    }
+
+    @media (max-width: 520px) {
+      body {
+        padding: 14px;
+      }
+
+      .shell {
+        padding: 18px;
+        border-radius: 18px;
+      }
+
+      .title {
+        font-size: 28px;
+      }
+
+      .name {
+        font-size: 26px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <h1 class="title">Popular Collections</h1>
+
+    <div class="chips">
+      <span class="chip profile">Profile</span>
+      <span class="chip new-york">New York</span>
+      <span class="chip relaxing">Relaxing</span>
+      <span class="chip person">Person</span>
+      <span class="chip fashion">Fashion</span>
+    </div>
+
+    <section class="gallery">
+      <article class="collection-card">
+        <div class="hero">
+          <img src="./Rectangle 1.jpg" alt="Portrait collection" />
+        </div>
+
+        <div class="thumbs">
+          <div class="thumb">
+            <img src="./Rectangle 2.png" alt="Portrait thumbnail" />
+          </div>
+          <div class="thumb">
+            <img src="./Rectangle 3.png" alt="Beauty thumbnail" />
+          </div>
+          <div class="thumb">
+            <img src="./Rectangle 4.png" alt="Fashion thumbnail" />
+          </div>
+        </div>
+
+        <div class="meta">
+          <h2 class="name">People</h2>
+          <span class="count">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="3.5" y="4.5" width="17" height="15" rx="2.5"></rect>
+              <circle cx="9" cy="10" r="1.6"></circle>
+              <path d="M20.5 15l-5.2-5.1-4.2 4.2-2.2-2.1-5.4 5.5"></path>
+            </svg>
+            144
+          </span>
+        </div>
+      </article>
+
+      <article class="collection-card">
+        <div class="hero">
+          <img src="./Rectangle 1.png" alt="Nature collection" />
+        </div>
+
+        <div class="thumbs">
+          <div class="thumb">
+            <img src="./Rectangle 5.png" alt="Nature thumbnail" />
+          </div>
+          <div class="thumb">
+            <img src="./Rectangle 6.png" alt="Nature thumbnail" />
+          </div>
+          <div class="thumb">
+            <img src="./Rectangle 7.png" alt="Nature thumbnail" />
+          </div>
+        </div>
+
+        <div class="meta">
+          <h2 class="name">Nature</h2>
+          <span class="count">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="3.5" y="4.5" width="17" height="15" rx="2.5"></rect>
+              <circle cx="9" cy="10" r="1.6"></circle>
+              <path d="M20.5 15l-5.2-5.1-4.2 4.2-2.2-2.1-5.4 5.5"></path>
+            </svg>
+            7k
+          </span>
+        </div>
+      </article>
+
+      <article class="collection-card">
+        <div class="hero">
+          <img src="./Rectangle 8.png" alt="History collection" />
+        </div>
+
+        <div class="thumbs">
+          <div class="thumb">
+            <img src="./Rectangle 9.png" alt="History thumbnail" />
+          </div>
+          <div class="thumb">
+            <img src="./Rectangle 10.png" alt="History thumbnail" />
+          </div>
+          <div class="thumb">
+            <img src="./Rectangle 11.png" alt="History thumbnail" />
+          </div>
+        </div>
+
+        <div class="meta">
+          <h2 class="name">History</h2>
+          <span class="count">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="3.5" y="4.5" width="17" height="15" rx="2.5"></rect>
+              <circle cx="9" cy="10" r="1.6"></circle>
+              <path d="M20.5 15l-5.2-5.1-4.2 4.2-2.2-2.1-5.4 5.5"></path>
+            </svg>
+            431
+          </span>
+        </div>
+      </article>
+    </section>
+  </main>
+</body>
+</html>

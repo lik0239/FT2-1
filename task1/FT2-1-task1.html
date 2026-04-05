@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product Info UI Design</title>
+  <style>
+    :root {
+      --page-bg: #edf2f8;
+      --card-bg: #ffffff;
+      --text-main: #191847;
+      --text-muted: #787d94;
+      --border-soft: #d7def0;
+      --pill-bg: #191847;
+      --cta: #4788e9;
+      --cta-shadow: #1c57b8;
+      --success: #00d98b;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+      background: var(--page-bg);
+      color: var(--text-main);
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .card {
+      width: min(887px, 100%);
+      display: grid;
+      grid-template-columns: 339px 1fr;
+      column-gap: 54px;
+      padding: 82px 46px 76px 52px;
+      border-radius: 26px;
+      background: var(--card-bg);
+      box-shadow: 0 24px 40px rgba(25, 24, 71, 0.08);
+    }
+
+    .product-media {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      padding-top: 12px;
+    }
+
+    .product-media img {
+      width: 100%;
+      max-width: 314px;
+      height: auto;
+    }
+
+    .product-details {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .tag {
+      margin-bottom: 28px;
+      padding: 8px 15px;
+      border-radius: 20px;
+      background: var(--pill-bg);
+      color: #fff;
+      font-size: 14px;
+      line-height: 18px;
+    }
+
+    .title {
+      max-width: 420px;
+      margin-bottom: 32px;
+      font-size: 28px;
+      line-height: 1.35;
+      font-weight: 600;
+    }
+
+    .old-price {
+      margin-bottom: 10px;
+      color: var(--text-muted);
+      font-size: 18px;
+      line-height: 23px;
+      text-decoration: line-through;
+    }
+
+    .new-price {
+      margin-bottom: 10px;
+      font-size: 48px;
+      line-height: 1;
+      font-weight: 700;
+    }
+
+    .note {
+      margin-bottom: 34px;
+      color: var(--text-muted);
+      font-size: 14px;
+      line-height: 20px;
+    }
+
+    .main-btn {
+      width: 100%;
+      margin-bottom: 32px;
+      padding: 16px 24px 18px;
+      border: none;
+      border-radius: 12px;
+      background: var(--cta);
+      box-shadow: 0 7px 0 var(--cta-shadow);
+      color: #fff;
+      font-size: 18px;
+      line-height: 23px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, background-color 0.18s ease;
+    }
+
+    .main-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 9px 0 var(--cta-shadow);
+    }
+
+    .main-btn:active {
+      transform: translateY(2px);
+      box-shadow: 0 5px 0 var(--cta-shadow);
+    }
+
+    .stock {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 30px;
+      font-size: 14px;
+      line-height: 18px;
+    }
+
+    .dot {
+      width: 13px;
+      height: 13px;
+      border-radius: 50%;
+      background: var(--success);
+      flex-shrink: 0;
+    }
+
+    .secondary-actions {
+      display: flex;
+      gap: 14px;
+      width: 100%;
+    }
+
+    .secondary-btn {
+      flex: 1 1 0;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      min-height: 64px;
+      padding: 18px 16px;
+      border: 2px solid var(--border-soft);
+      border-radius: 12px;
+      background: #fff;
+      color: var(--text-main);
+      font-size: 16px;
+      line-height: 20px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: border-color 0.18s ease, transform 0.18s ease;
+    }
+
+    .secondary-btn:hover {
+      transform: translateY(-2px);
+      border-color: #c0c9e3;
+    }
+
+    .secondary-btn img {
+      width: 22px;
+      height: 22px;
+    }
+
+    @media (max-width: 860px) {
+      .card {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        padding: 28px 22px;
+      }
+
+      .product-media {
+        justify-content: center;
+        padding-top: 0;
+      }
+
+      .product-details {
+        width: 100%;
+      }
+
+      .title {
+        max-width: none;
+      }
+    }
+
+    @media (max-width: 520px) {
+      body {
+        padding: 16px;
+      }
+
+      .card {
+        padding: 22px 16px;
+        border-radius: 18px;
+      }
+
+      .secondary-actions {
+        flex-direction: column;
+      }
+
+      .secondary-btn {
+        width: 100%;
+      }
+
+      .main-btn {
+        font-size: 17px;
+      }
+
+      .new-price {
+        font-size: 40px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <section class="product-media" aria-label="Product image">
+      <img src="./Product Info UI Design/image 1.png" alt="Pink gaming headset with cat ears" />
+    </section>
+
+    <section class="product-details">
+      <p class="tag">Free shipping</p>
+      <h1 class="title">Razer Kraken Kitty Edt Gaming Headset Quartz</h1>
+
+      <p class="old-price">1,599,000</p>
+      <p class="new-price">799,000</p>
+      <p class="note">The offer is valid until April 3 or as long as stock lasts!</p>
+
+      <button class="main-btn" type="button">Add to cart</button>
+
+      <p class="stock">
+        <span class="dot" aria-hidden="true"></span>
+        50+ pcs. in stock.
+      </p>
+
+      <div class="secondary-actions">
+        <button class="secondary-btn" type="button">
+          <img src="./Product Info UI Design/Frame.svg" alt="" aria-hidden="true" />
+          Add to compare
+        </button>
+        <button class="secondary-btn" type="button">
+          <img src="./Product Info UI Design/Vector.svg" alt="" aria-hidden="true" />
+          Add to wishlist
+        </button>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
